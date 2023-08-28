@@ -2,7 +2,7 @@
   <p>{{ questionDetails.question | unescapeHtml }}</p>
   <button
     *ngFor="let answer of possibleAnswers; index as i"
-    (click)="selectedAnswer(i)"
+    (click)="selectAnswer(i)"
     class="button-answer"
     [ngClass]="{ 'button-selected': i === selectedAnswer }"
   >
