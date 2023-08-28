@@ -1,0 +1,34 @@
+<h2>Quiz Maker</h2>
+
+<select id="categorySelect" #categorySelect>
+  <option selected disabled value="">Select a category</option>
+  <option
+    *ngFor="
+      let triviaCategory of (triviaCategories$ | async)?.trivia_categories
+    "
+    [value]="triviaCategory.id"
+  >
+    {{ triviaCategory.name }}
+  </option>
+  }
+</select>
+
+<select id="difficultySelect" #difficultySelect>
+  <option selected disabled value="">Select difficulty</option>
+  <option value="easy">Easy</option>
+  <option value="medium">Medium</option>
+  <option value="hard">Hard</option>
+</select>
+
+<button
+  id="createBtn"
+  (click)="
+    createQuizForCategoryAndDifficulty(
+      categorySelect.value,
+      difficultySelect.value
+    )
+  "
+  [disabled]="quizCreated"
+>
+  Create
+</button>

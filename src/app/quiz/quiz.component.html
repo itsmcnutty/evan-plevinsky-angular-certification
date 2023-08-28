@@ -1,0 +1,13 @@
+<app-quiz-creation (createQuizEvent)="createQuiz($event)"></app-quiz-creation>
+
+<div *ngFor="let questionDetails of quizQuestions; index as i">
+  <app-quiz-question
+    [questionDetails]="questionDetails"
+    [questionId]="i"
+    (answerSelectedEvent)="saveAnswerForQuestion($event)"
+  ></app-quiz-question>
+</div>
+
+<ng-container *ngIf="quizAnswers.length === 5">
+  <button (click)="viewQuizResults()" id="quizSubmit">Submit</button>
+</ng-container>

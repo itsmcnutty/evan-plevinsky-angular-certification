@@ -1,0 +1,11 @@
+<ng-container *ngIf="questionDetails">
+  <p>{{ questionDetails.question | unescapeHtml }}</p>
+  <button
+    *ngFor="let answer of possibleAnswers; index as i"
+    (click)="selectedAnswer(i)"
+    class="button-answer"
+    [ngClass]="{ 'button-selected': i === selectedAnswer }"
+  >
+    {{ answer | unescapeHtml }}
+  </button>
+</ng-container>

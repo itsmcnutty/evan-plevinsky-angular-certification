@@ -1,0 +1,28 @@
+.answer-correct {
+  background: green;
+}
+
+.answer-incorrect {
+  background: red;
+}
+
+.result-failed {
+  background: red;
+}
+
+.result-passed {
+  background: yellow;
+}
+
+.result-excelled {
+  background: green;
+}
+
+#quizScore {
+  padding: 0px 10px;
+  display: inline-block;
+}
+
+#btnNewQuiz {
+  display: block;
+}
