@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class UnescapePipe implements PipeTransform {
-  transform(value: any, args?: any): any {
+  transform(value: string): any {
     const doc = new DOMParser().parseFromString(value, 'text/html');
     return doc.documentElement.textContent;
   }
