@@ -3,6 +3,7 @@
 <div *ngFor="let questionAnswer of quizAnswers">
   <p>{{ questionAnswer.question | unescapeHtml }}</p>
   <button
+    class="button-answer"
     *ngFor="let answer of questionAnswer.possibleAnswers; index as i"
     [ngClass]="{
       'answer-correct': i === questionAnswer.correctAnswerId,
@@ -14,10 +15,15 @@
   </button>
 </div>
 
-<p id="quizScore" [ngClass]="{
-  'result-failed': correctAnswers <= 1,
-  'result-passed': correctAnswers === 2 || correctAnswers === 3,
-  'result-excelled': correctAnswers >= 4
-}">You scored {{correctAnswers}} out of 5</p>
+<p
+  id="quizScore"
+  [ngClass]="{
+    'result-failed': correctAnswers <= 1,
+    'result-passed': correctAnswers === 2 || correctAnswers === 3,
+    'result-excelled': correctAnswers >= 4
+  }"
+>
+  You scored {{ correctAnswers }} out of 5
+</p>
 
 <a id="btnNewQuiz" routerLink="/quiz"><button>Create a new quiz</button></a>

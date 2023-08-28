@@ -1,5 +1,5 @@
 <app-quiz-creation (createQuizEvent)="createQuiz($event)"></app-quiz-creation>
-
+<hr />
 <div *ngFor="let questionDetails of quizQuestions; index as i">
   <app-quiz-question
     [questionDetails]="questionDetails"
